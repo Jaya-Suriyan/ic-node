@@ -21,7 +21,7 @@ const app = express();
 
 const port = process.env.PORT || 5000;
 
-app.use(cors({ origin: "*" }));
+app.use(cors({ origin: process.env.ORIGIN || "*" }));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(errorHandler);
@@ -32,6 +32,5 @@ app.get("/", (_req, res) => res.json({ msg: "Hello, Nodejs!" }));
 
 app.use("/user", userRoutes);
 app.use("/product", productRoutes);
-
 
 app.listen(port, () => console.log(`Server is running on port: ${port}`));
