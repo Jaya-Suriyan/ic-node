@@ -6,6 +6,7 @@ module.exports = {
     database: "ic",
     host: "127.0.0.1",
     dialect: "postgres",
+    dialectModule: require('pg')
   },
   test: {
     username: "postgres",
@@ -13,6 +14,7 @@ module.exports = {
     database: "ic",
     host: "127.0.0.1",
     dialect: "postgres",
+    dialectModule: require('pg')
   },
   production: {
     username: process.env.DB_USERNAME || "postgres",
@@ -20,6 +22,7 @@ module.exports = {
     database: process.env.DB_NAME || "ic",
     host: process.env.DB_HOST || "127.0.0.1",
     dialect: "postgres",
+    dialectModule: require('pg'),
     port: process.env.DB_PORT || 5432, 
   },
 };
